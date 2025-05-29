@@ -6,7 +6,7 @@ const Navbar = () => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <div className="container-fluid d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
-            <img src="/logo2.gif" alt="logo" className="me-2" style={{ width: '35px' }} />
+            <img src="logo2.gif" alt="logo" className="me-2" style={{ width: '35px' }} />
             <h1 className="navbar-brand mb-0">R.M.K</h1>
           </div>
 
