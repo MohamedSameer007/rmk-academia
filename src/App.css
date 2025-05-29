@@ -274,6 +274,18 @@ p {
 
     }
 
+    .box-item h3 {
+        font-size: 15px;
+        font-weight: 400;
+        text-decoration: none;
+    }
+
+    .box-item p {
+        border-bottom: 2px solid #009E6E;
+        font-size: 14px;
+    }
+
+
     .user-details {
         cursor: pointer;
         width: 100%;
