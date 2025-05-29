@@ -64,7 +64,10 @@ function App() {
         <Route path='ecefourth' element={<EceFourth />} />
       </Route>
     </Route>
-  ))
+  ),
+  {
+    basename: '/rmk-academia' // ✅ ADD THIS LINE
+  })
   return (
     <>
       <RouterProvider router={router}>
