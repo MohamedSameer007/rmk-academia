@@ -1,7 +1,13 @@
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <div className="main container d-flex align-items-center justify-content-center my-3" style={{ minHeight: "650px" }}>
+    <div className="main container d-flex align-items-center justify-content-center my-3" style={{ minHeight: "650px" }} data-aos="zoom-in" data-aos-delay="0" data-aos-duration="1000">
       <div className="row w-100">
         <div className="col-lg-6 text-center p-md-5 my-md-4 p-1 my-1">
           <h1 className="my-2">RMK ENGINEERING COLLEGE</h1>
@@ -20,6 +26,7 @@ const Home = () => {
         </div>
       </div>
     </div>
+    
   )
 }
 
