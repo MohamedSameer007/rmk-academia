@@ -15,6 +15,9 @@ import EceFirst from './years/1year/EceFirst'
 import ItLayout from './UserLayout/1year/ItLayout'
 import ItOne from './Users/1year/Itone'
 import { singleuserloader, userloader } from './utils/one/ItUser'
+
+import { singleusersloader, usersloader } from './utils/three/ItUser'
+
 import ItOneInfo from './info/oneInfo/ItOneInfo'
 import SecondYearLayout from './layouts/SecondYearLayout'
 import ItSecond from './years/2year/ItSecond'
@@ -26,6 +29,9 @@ import ItFourth from './years/4year/ItFourth'
 import CseFourth from './years/4year/CseFourth'
 import AidsFourth from './years/4year/AidsFourth'
 import EceFourth from './years/4year/EceFourth'
+import ItThreeInfo from './info/threeInfo/ItThreeInfo'
+import ItThree from './Users/3year/ItThree'
+import ItThreeLayout from './UserLayout/3year/ItThreeLayout'
 
 
 function App() {
@@ -34,10 +40,14 @@ function App() {
       <Route index element={<Home />} />
 
       <Route path='first' element={<FirstYearLayout />}>
+
+
         <Route path='itfirst' element={<ItLayout />}>
           <Route index element={<ItOne />} loader={userloader} />
           <Route path=":id" element={<ItOneInfo />} loader={singleuserloader} />
         </Route>
+
+
         <Route path='csefirst' element={<CseFirst />} />
         <Route path='aidsfirst' element={<AidsFirst />} />
         <Route path='ecefirst' element={<EceFirst />} />
@@ -51,7 +61,15 @@ function App() {
       </Route>
 
       <Route path='third' element={<ThirdYearLayout />}>
-        <Route path='itthird' element={<ItThird />} />
+
+        <Route path='itthird' element={<ItThreeLayout />}>
+          <Route index element={<ItThree />} loader={usersloader} />
+          <Route path=":id" element={<ItThreeInfo />} loader={singleusersloader} />
+        </Route>
+{/* 
+        <Route path='itthird' element={<ItThird />} /> */}
+
+
         <Route path='csethird' element={<CseThird />} />
         <Route path='aidsthird' element={<AidsThird />} />
         <Route path='ecethird' element={<EceThird />} />
