@@ -14,6 +14,7 @@ import AidsFirst from './years/1year/AidsFirst'
 import EceFirst from './years/1year/EceFirst'
 import ItLayout from './UserLayout/1year/ItLayout'
 import ItOne from './Users/1year/Itone'
+
 import { singleuserloader, userloader } from './utils/one/ItUser'
 
 import { singleusersloader, usersloader } from './utils/three/ItUser'
@@ -32,60 +33,62 @@ import EceFourth from './years/4year/EceFourth'
 import ItThreeInfo from './info/threeInfo/ItThreeInfo'
 import ItThree from './Users/3year/ItThree'
 import ItThreeLayout from './UserLayout/3year/ItThreeLayout'
+import Login from './pages/Login'
+import RequireRMK from './RequireRMK'
 
 
 function App() {
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<PageLayout />}>
-      <Route index element={<Home />} />
 
-      <Route path='first' element={<FirstYearLayout />}>
+      <Route path='login' element={<Login />} />
 
+      <Route element={<RequireRMK />}>
 
-        <Route path='itfirst' element={<ItLayout />}>
-          <Route index element={<ItOne />} loader={userloader} />
-          <Route path=":id" element={<ItOneInfo />} loader={singleuserloader} />
+        <Route index element={<Home />} />
+
+        <Route path='first' element={<FirstYearLayout />}>
+          <Route path='itfirst' element={<ItLayout />}>
+            <Route index element={<ItOne />} loader={userloader} />
+            <Route path=":id" element={<ItOneInfo />} loader={singleuserloader} />
+          </Route>
+          <Route path='csefirst' element={<CseFirst />} />
+          <Route path='aidsfirst' element={<AidsFirst />} />
+          <Route path='ecefirst' element={<EceFirst />} />
         </Route>
 
-
-        <Route path='csefirst' element={<CseFirst />} />
-        <Route path='aidsfirst' element={<AidsFirst />} />
-        <Route path='ecefirst' element={<EceFirst />} />
-      </Route>
-
-      <Route path='second' element={<SecondYearLayout />}>
-        <Route path='itsecond' element={<ItSecond />} />
-        <Route path='csesecond' element={<CseSecond />} />
-        <Route path='aidssecond' element={<AidsSecond />} />
-        <Route path='ecesecond' element={<EceSecond />} />
-      </Route>
-
-      <Route path='third' element={<ThirdYearLayout />}>
-
-        <Route path='itthird' element={<ItThreeLayout />}>
-          <Route index element={<ItThree />} loader={usersloader} />
-          <Route path=":id" element={<ItThreeInfo />} loader={singleusersloader} />
+        <Route path='second' element={<SecondYearLayout />}>
+          <Route path='itsecond' element={<ItSecond />} />
+          <Route path='csesecond' element={<CseSecond />} />
+          <Route path='aidssecond' element={<AidsSecond />} />
+          <Route path='ecesecond' element={<EceSecond />} />
         </Route>
-{/* 
+
+        <Route path='third' element={<ThirdYearLayout />}>
+          <Route path='itthird' element={<ItThreeLayout />}>
+            <Route index element={<ItThree />} loader={usersloader} />
+            <Route path=":id" element={<ItThreeInfo />} loader={singleusersloader} />
+          </Route>
+          {/* 
         <Route path='itthird' element={<ItThird />} /> */}
 
+          <Route path='csethird' element={<CseThird />} />
+          <Route path='aidsthird' element={<AidsThird />} />
+          <Route path='ecethird' element={<EceThird />} />
+        </Route>
 
-        <Route path='csethird' element={<CseThird />} />
-        <Route path='aidsthird' element={<AidsThird />} />
-        <Route path='ecethird' element={<EceThird />} />
-      </Route>
-
-      <Route path='fourth' element={<FourthYearLayout />}>
-        <Route path='itfourth' element={<ItFourth />} />
-        <Route path='csefourth' element={<CseFourth />} />
-        <Route path='aidsfourth' element={<AidsFourth />} />
-        <Route path='ecefourth' element={<EceFourth />} />
+        <Route path='fourth' element={<FourthYearLayout />}>
+          <Route path='itfourth' element={<ItFourth />} />
+          <Route path='csefourth' element={<CseFourth />} />
+          <Route path='aidsfourth' element={<AidsFourth />} />
+          <Route path='ecefourth' element={<EceFourth />} />
+        </Route>
       </Route>
     </Route>
   ),
-  {
-    basename: '/rmk-academia' // ✅ ADD THIS LINE
-  })
+    {
+      basename: '/rmk-academia' // ✅ ADD THIS LINE
+    })
   return (
     <>
       <RouterProvider router={router}>

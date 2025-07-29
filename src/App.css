@@ -126,7 +126,7 @@
 
 .box-item h3 {
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 500;
     text-decoration: none;
 }
 
@@ -150,8 +150,8 @@ a {
 
 .user-details {
     cursor: pointer;
-    width: 55%;
-    padding: 30px;
+    width: 50%;
+    padding: 20px;
     border-radius: 16px;
 
     background: rgba(0, 0, 0, 0.4);
@@ -182,12 +182,18 @@ td {
 }
 
 td {
-    font-size: 20px;
+    font-size: 24px;
+    font-weight: 500;
 }
 
 th {
     font-size: 24px;
     font-weight: 450;
+}
+
+th.gold {
+  color: yellow;
+
 }
 
 span {
@@ -315,4 +321,23 @@ p {
     .img {
         height: 300px;
     }
+}
+
+.login-page{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login{
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.4);
+        /* semi-transparent background */
+        backdrop-filter: blur(4px);
+        /* actual background blur */
+        -webkit-backdrop-filter: blur(7px);
 }
